@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.Drinks
+namespace BleakwindBuffet.Data.Drinks
 {
     public class Sailor_s_Soda
     {
@@ -45,6 +45,10 @@ namespace Data.Drinks
                 if (ice == false)
                 {
                     SpecialInstructions.Add("Hold ice.");
+                }
+                else
+                {
+                    SpecialInstructions.Remove("Hold ice.");
                 }
             }
         }

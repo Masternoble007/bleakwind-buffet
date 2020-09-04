@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.Entrees
+namespace BleakwindBuffet.Data.Entrees
 {
     public class Thalmor_Triple
     {
@@ -39,6 +39,10 @@ namespace Data.Entrees
                 {
                     SpecialInstructions.Add("Hold the bun.");
                 }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the bun.");
+                }
             }
         }
 
@@ -61,6 +65,10 @@ namespace Data.Entrees
                 {
                     SpecialInstructions.Add("Hold the ketchup.");
                 }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the ketchup.");
+                }
             }
         }
 
@@ -81,6 +89,10 @@ namespace Data.Entrees
                 if (mustard == false)
                 {
                     SpecialInstructions.Add("Hold the mustard.");
+                }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the mustard.");
                 }
             }
         }
@@ -103,6 +115,10 @@ namespace Data.Entrees
                 {
                     SpecialInstructions.Add("Hold the pickle.");
                 }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the pickle.");
+                }
             }
         }
 
@@ -123,6 +139,10 @@ namespace Data.Entrees
                 if (cheese == false)
                 {
                     SpecialInstructions.Add("Hold the cheese.");
+                }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the cheese.");
                 }
             }
         }
@@ -145,6 +165,10 @@ namespace Data.Entrees
                 {
                     SpecialInstructions.Add("Hold the tomato.");
                 }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the tomato.");
+                }
             }
         }
 
@@ -165,6 +189,10 @@ namespace Data.Entrees
                 if (lettuce == false)
                 {
                     SpecialInstructions.Add("Hold the lettuce.");
+                }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the lettuce.");
                 }
             }
         }
@@ -187,6 +215,10 @@ namespace Data.Entrees
                 {
                     SpecialInstructions.Add("Hold the mayo.");
                 }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the mayo.");
+                }
             }
         }
 
@@ -208,6 +240,10 @@ namespace Data.Entrees
                 {
                     SpecialInstructions.Add("Hold the bacon.");
                 }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the bacon.");
+                }
             }
         }
 
@@ -228,6 +264,10 @@ namespace Data.Entrees
                 if (egg == false)
                 {
                     SpecialInstructions.Add("Hold the eggs.");
+                }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the eggs.");
                 }
             }
         }

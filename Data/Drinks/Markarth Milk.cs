@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.Drinks
+namespace BleakwindBuffet.Data.Drinks
 {
     public class Markarth_Milk
     {
@@ -39,6 +39,10 @@ namespace Data.Drinks
                 if (ice == true)
                 {
                     SpecialInstructions.Add("Add ice.");
+                }
+                else
+                {
+                    SpecialInstructions.Remove("Add ice.");
                 }
             }
         }

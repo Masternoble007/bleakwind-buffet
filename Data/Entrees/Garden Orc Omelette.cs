@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.Entrees
+namespace BleakwindBuffet.Data.Entrees
 {
     public class Garden_Orc_Omelette
     {
@@ -40,6 +40,10 @@ namespace Data.Entrees
                 {
                     SpecialInstructions.Add("Hold the broccoli.");
                 }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the broccoli.");
+                }
             }
         }
 
@@ -60,6 +64,10 @@ namespace Data.Entrees
                 if (mushrooms == false)
                 {
                     SpecialInstructions.Add("Hold the mushrooms.");
+                }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the mushrooms.");
                 }
             }
         }
@@ -82,6 +90,10 @@ namespace Data.Entrees
                 {
                     SpecialInstructions.Add("Hold the tomatoes.");
                 }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the tomatoes.");
+                }
             }
         }
 
@@ -102,6 +114,10 @@ namespace Data.Entrees
                 if (cheddar == false)
                 {
                     SpecialInstructions.Add("Hold the cheddar.");
+                }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the cheddar.");
                 }
             }
         }

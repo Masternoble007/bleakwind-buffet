@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.Entrees
+namespace BleakwindBuffet.Data.Entrees
 {
     public class Smokehouse_Skeleton
     {
@@ -39,6 +39,10 @@ namespace Data.Entrees
                 {
                     SpecialInstructions.Add("Hold the sausage.");
                 }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the sausage.");
+                }
             }
         }
 
@@ -59,6 +63,10 @@ namespace Data.Entrees
                 if (egg == false)
                 {
                     SpecialInstructions.Add("Hold the eggs.");
+                }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the eggs.");
                 }
             }
         }
@@ -81,6 +89,10 @@ namespace Data.Entrees
                 {
                     SpecialInstructions.Add("Hold the has browns.");
                 }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the has browns.");
+                }
             }
         }
 
@@ -101,6 +113,10 @@ namespace Data.Entrees
                 if (pancake == false)
                 {
                     SpecialInstructions.Add("Hold the pancake.");
+                }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the pancake.");
                 }
             }
         }

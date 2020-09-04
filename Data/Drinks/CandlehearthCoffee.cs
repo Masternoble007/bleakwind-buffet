@@ -8,9 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.Drinks
+namespace BleakwindBuffet.Data.Drinks
 {
-    public class Candlehearth_Coffee
+    public class CandlehearthCoffee
     {
         /// <summary>
         /// The price of the drink
@@ -40,6 +40,10 @@ namespace Data.Drinks
                 {
                     SpecialInstructions.Add("Add ice.");
                 }
+                else
+                {
+                    SpecialInstructions.Remove("Add ice.");
+                }
             }
         }
 
@@ -66,6 +70,10 @@ namespace Data.Drinks
                 {
                     SpecialInstructions.Add("Add cream to coffee.");
                 }
+                else
+                {
+                    SpecialInstructions.Remove("Add cream to coffee.");
+                }
             }
         }
 
@@ -86,6 +94,10 @@ namespace Data.Drinks
                 if (decaf == true)
                 {
                     SpecialInstructions.Add("Make coffee decaf.");
+                }
+                else
+                {
+                    SpecialInstructions.Remove("Make coffee decaf.");
                 }
             }
         }

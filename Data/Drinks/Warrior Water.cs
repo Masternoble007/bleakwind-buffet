@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.Drinks
+namespace BleakwindBuffet.Data.Drinks
 {
     public class Warrior_Water
     {
@@ -56,6 +56,10 @@ namespace Data.Drinks
                 {
                     SpecialInstructions.Add("hold ice.");
                 }
+                else
+                {
+                    SpecialInstructions.Remove("hold ice.");
+                }
             }
         }
 
@@ -76,6 +80,10 @@ namespace Data.Drinks
                 if (lemon == true)
                 {
                     SpecialInstructions.Add("Add lemon.");
+                }
+                else
+                {
+                    SpecialInstructions.Remove("Add lemon.");
                 }
             }
         }

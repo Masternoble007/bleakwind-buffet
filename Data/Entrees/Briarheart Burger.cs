@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.Text;
 
-namespace Data.Entrees
+namespace BleakwindBuffet.Data.Entrees
 {
     public class Briarheart_Burger
     {
@@ -28,6 +28,14 @@ namespace Data.Entrees
         private bool bun = true;
 
         /// <summary>
+        /// List to tell what is not added.
+        /// </summary>
+        public List<string> SpecialInstructions
+        {
+            get;
+        }
+
+        /// <summary>
         /// Gets and sets the bun.
         /// </summary>
         public bool Bun
@@ -39,6 +47,10 @@ namespace Data.Entrees
                 if (bun == false)
                 {
                     SpecialInstructions.Add("Hold the bun.");
+                }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the bun.");
                 }
             }
         }
@@ -61,6 +73,10 @@ namespace Data.Entrees
                 {
                     SpecialInstructions.Add("Hold the ketchup.");
                 }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the ketchup.");
+                }
             }
         }
 
@@ -81,6 +97,10 @@ namespace Data.Entrees
                 if (mustard == false)
                 {
                     SpecialInstructions.Add("Hold the mustard.");
+                }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the mustard.");
                 }
             }
         }
@@ -103,6 +123,10 @@ namespace Data.Entrees
                 {
                     SpecialInstructions.Add("Hold the pickle.");
                 }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the pickle.");
+                }
             }
         }
 
@@ -124,33 +148,11 @@ namespace Data.Entrees
                 {
                     SpecialInstructions.Add("Hold the cheese.");
                 }
+                else
+                {
+                    SpecialInstructions.Remove("Hold the cheese.");
+                }
             }
-        }
-
-        /// <summary>
-        /// List to tell what is not added.
-        /// </summary>
-        public List<string> SpecialInstructions
-        {
-            get;
-        }
-
-        /// <summary>
-        /// Removes pickle
-        /// </summary>
-        public void holdPickle()
-        {
-                Pickle = false;
-                SpecialInstructions.Add("Hold the pickle.");
-        }
-
-        /// <summary>
-        /// Removes cheese.
-        /// </summary>
-        public void holdCheese()
-        {
-                Cheese = false;
-                SpecialInstructions.Add("Hold the cheese.");
         }
 
         /// <summary>
