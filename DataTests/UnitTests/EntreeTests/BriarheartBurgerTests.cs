@@ -103,7 +103,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ShouldReturnCorrectPrice()
         {
             Briarheart_Burger bb = new Briarheart_Burger();
-            Assert.Equal(6.32, bb.price);
+            Assert.Equal(6.32, bb.Price);
         }
 
         [Fact]
@@ -111,7 +111,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         {
             uint temp = 743;
             Briarheart_Burger bb = new Briarheart_Burger();
-            Assert.Equal(temp, bb.calories);
+            Assert.Equal(temp, bb.Calories);
         }
 
         [Theory]

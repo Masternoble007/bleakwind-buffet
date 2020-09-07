@@ -22,7 +22,6 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public uint Calories = 982;
 
-
         /// <summary>
         /// List to tell what is not added.
         /// </summary>

@@ -14,12 +14,23 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// The price of the burger.
         /// </summary>
-        public double Price = 8.32;
+        public double Price
+        {
+            get
+            {
+                return 8.32;
+            }
+        }
 
         /// <summary>
         /// The calories of the burger
         /// </summary>
-        public uint Calories = 943;
+        public uint Calories {
+            get
+            {
+                return 943;
+            }
+        }
 
         /// <summary>
         /// Whether entree has a bun or not is with the burger.
