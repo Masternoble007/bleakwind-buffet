@@ -35,14 +35,7 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 sausageLink = value;
-                if (sausageLink == false)
-                {
-                    SpecialInstructions.Add("Hold the sausage.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the sausage.");
-                }
+
             }
         }
 
@@ -60,14 +53,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 egg = value;
-                if (egg == false)
-                {
-                    SpecialInstructions.Add("Hold the eggs.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the eggs.");
-                }
             }
         }
 
@@ -85,14 +70,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 hashBrowns = value;
-                if (hashBrowns == false)
-                {
-                    SpecialInstructions.Add("Hold the has browns.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the has browns.");
-                }
             }
         }
 
@@ -110,14 +87,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 pancake = value;
-                if (pancake == false)
-                {
-                    SpecialInstructions.Add("Hold the pancake.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the pancake.");
-                }
             }
         }
 
@@ -126,7 +95,16 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public List<string> SpecialInstructions
         {
-            get;
+            get
+            {
+                List<string> si = new List<string>();
+                if (!SausageLink) si.Add("Hold the sausage.");
+                if (!Egg) si.Add("Hold the eggs.");
+                if (!HashBrowns) si.Add("Hold the hashbrowns.");
+                if (!Pancake) si.Add("Hold the pancake.");
+
+                return si;
+            }
         }
 
         /// <summary>

@@ -10,50 +10,84 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    class Fried_Miraak
+    public class Fried_Miraak
     {
         /// <summary>
         /// Prices of the side.
         /// </summary>
-        private double Price;
+        public double price;
 
         /// <summary>
         /// The calories of the side.
         /// </summary>
-        private uint Calories;
+        public uint calories;
 
         /// <summary>
         /// Size of the pancakes
         /// </summary>
-        private Size size = Size.Small;
+        private Size size;
 
         /// <summary>
-        /// Sets up the size with the price and calories for the pancake
+        /// Sets / gets the private size of the side.
         /// </summary>
-        public Size s
+        public Size Size
+        {
+            get { return size; }
+            set { size = value; }
+        }
+
+        /// <summary>
+        /// Sets up the size with the price for the side.
+        /// </summary>
+        public double Price
         {
             get
             {
-                return size;
+                switch (Size)
+                {
+                    case Size.Small: return 1.78;
+                    case Size.Medium: return 2.01;
+                    case Size.Large: return 2.88;
+                    default: throw new NotImplementedException("Should never be reached");
+                }
             }
             set
             {
-                size = value;
-                switch (value)
+                price = value;
+            }
+        }
+
+        /// <summary>
+        /// Sets up the size with the calories for the side.
+        /// </summary>
+        public uint Calories
+        {
+            get
+            {
+                switch (Size)
                 {
-                    case Size.Small:
-                        Price = 1.78;
-                        Calories = 151;
-                        break;
-                    case Size.Medium:
-                        Price = 2.01;
-                        Calories = 236;
-                        break;
-                    case Size.Large:
-                        Price = 2.88;
-                        Calories = 306;
-                        break;
+                    case Size.Small: return 151;
+                    case Size.Medium: return 236;
+                    case Size.Large: return 306;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
+            }
+            set
+            {
+                calories = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets instructions for the side.
+        /// </summary>
+        public List<string> SpecialInstructions
+        {
+            get
+            {
+                List<string> si = new List<string>();
+
+                return si;
             }
         }
 
@@ -64,7 +98,7 @@ namespace BleakwindBuffet.Data.Sides
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append(size + " fried miraak");
+            sb.Append(size + " Fried Miraak");
             return sb.ToString();
         }
     }

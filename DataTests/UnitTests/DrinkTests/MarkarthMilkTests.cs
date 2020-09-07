@@ -7,6 +7,7 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Drinks;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -15,21 +16,37 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldNotIncludeIceByDefault()
         {
+            Markarth_Milk mm = new Markarth_Milk();
+            Assert.False(mm.Ice);
         }
 
         [Fact]
         public void ShouldBySmallByDefault()
         {
+            Markarth_Milk mm = new Markarth_Milk();
+            Assert.Equal(Size.Small, mm.Size);
         }
 
         [Fact]
         public void ShouldByAbleToSetIce()
         {
+            Markarth_Milk mm = new Markarth_Milk();
+            mm.Ice = true;
+            Assert.True(mm.Ice);
+            mm.Ice = false;
+            Assert.False(mm.Ice);
         }
 
         [Fact]
         public void ShouldBeAbleToSetSize()
         {
+            Markarth_Milk mm = new Markarth_Milk();
+            mm.Size = Size.Large;
+            Assert.Equal(Size.Large, mm.Size);
+            mm.Size = Size.Medium;
+            Assert.Equal(Size.Medium, mm.Size);
+            mm.Size = Size.Small;
+            Assert.Equal(Size.Small, mm.Size);
         }
 
         [Theory]
@@ -38,6 +55,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(Size.Large, 1.22)]
         public void ShouldHaveCorrectPriceForSize(Size size, double price)
         {
+            Markarth_Milk mm = new Markarth_Milk();
+            mm.Size = size;
+            Assert.Equal(price, mm.Price);
         }
 
         [Theory]
@@ -46,6 +66,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(Size.Large, 93)]
         public void ShouldHaveCorrectCaloriesForSize(Size size, uint cal)
         {
+            Markarth_Milk mm = new Markarth_Milk();
+            mm.Size = size;
+            Assert.Equal(cal, mm.Calories);
         }
 
         [Theory]
@@ -53,6 +76,10 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(false)]
         public void ShouldHaveCorrectSpecialInstructions(bool includeIce)
         {
+            Markarth_Milk mm = new Markarth_Milk();
+            mm.Ice = includeIce;
+            if (includeIce) Assert.Contains("Add ice.", mm.SpecialInstructions);
+            else Assert.Empty(mm.SpecialInstructions);
         }
 
         [Theory]
@@ -61,6 +88,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(Size.Large, "Large Markarth Milk")]
         public void ShouldReturnCorrectToStringBasedOnSize(Size size, string name)
         {
+            Markarth_Milk mm = new Markarth_Milk();
+            mm.Size = size;
+            Assert.Equal(name, mm.ToString());
         }
     }
 }

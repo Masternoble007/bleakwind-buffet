@@ -15,45 +15,79 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// Prices of the side.
         /// </summary>
-        private double Price;
+        private double price;
 
         /// <summary>
         /// The calories of the side.
         /// </summary>
-        private uint Calories;
+        private uint calories;
 
         /// <summary>
         /// Size of the salad.
         /// </summary>
-        private Size size = Size.Small;
+        private Size size;
 
         /// <summary>
-        /// Sets up the size with the price and calories for the salad
+        /// Sets / gets the private size of the side.
         /// </summary>
-        public Size s
+        public Size Size
+        {
+            get { return size; }
+            set { size = value; }
+        }
+
+        /// <summary>
+        /// Sets up the size with the price for the side.
+        /// </summary>
+        public double Price
         {
             get
             {
-                return size;
+                switch (Size)
+                {
+                    case Size.Small: return 0.93;
+                    case Size.Medium: return 1.28;
+                    case Size.Large: return 1.82;
+                    default: throw new NotImplementedException("Should never be reached");
+                }
             }
             set
             {
-                size = value;
-                switch (value)
+                price = value;
+            }
+        }
+
+        /// <summary>
+        /// Sets up the size with the calories for the side.
+        /// </summary>
+        public uint Calories
+        {
+            get
+            {
+                switch (Size)
                 {
-                    case Size.Small:
-                        Price = 0.93;
-                        Calories = 41;
-                        break;
-                    case Size.Medium:
-                        Price = 1.28;
-                        Calories = 52;
-                        break;
-                    case Size.Large:
-                        Price = 1.82;
-                        Calories = 73;
-                        break;
+                    case Size.Small: return 41;
+                    case Size.Medium: return 52;
+                    case Size.Large: return 73;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
+            }
+            set
+            {
+                calories = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets instructions for the side.
+        /// </summary>
+        public List<string> SpecialInstructions
+        {
+            get
+            {
+                List<string> si = new List<string>();
+
+                return si;
             }
         }
 

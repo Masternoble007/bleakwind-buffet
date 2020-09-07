@@ -36,14 +36,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 broccoli = value;
-                if (broccoli == false)
-                {
-                    SpecialInstructions.Add("Hold the broccoli.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the broccoli.");
-                }
             }
         }
 
@@ -61,14 +53,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 mushrooms = value;
-                if (mushrooms == false)
-                {
-                    SpecialInstructions.Add("Hold the mushrooms.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the mushrooms.");
-                }
             }
         }
 
@@ -86,14 +70,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 tomato = value;
-                if (tomato == false)
-                {
-                    SpecialInstructions.Add("Hold the tomatoes.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the tomatoes.");
-                }
             }
         }
 
@@ -111,14 +87,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 cheddar = value;
-                if (cheddar == false)
-                {
-                    SpecialInstructions.Add("Hold the cheddar.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the cheddar.");
-                }
             }
         }
 
@@ -127,7 +95,16 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public List<string> SpecialInstructions
         {
-            get;
+            get
+            {
+                List<string> si = new List<string>();
+                if (!Broccoli) si.Add("Hold the broccoli.");
+                if (!Mushrooms) si.Add("Hold the mushrooms.");
+                if (!Tomato) si.Add("Hold the tomatoes.");
+                if (!Cheddar) si.Add("Hold the cheddar.");
+
+                return si;
+            }
         }
 
         /// <summary>

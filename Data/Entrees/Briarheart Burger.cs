@@ -15,12 +15,12 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// The price of the burger.
         /// </summary>
-        private double Price = 6.32;
+        public double price = 6.32;
 
         /// <summary>
         /// The calories of the burger
         /// </summary>
-        private uint Calories = 743;
+        public uint calories = 743;
 
         /// <summary>
         /// Whether entree has a bun or not is with the burger.
@@ -32,7 +32,17 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public List<string> SpecialInstructions
         {
-            get;
+            get
+            {
+                List<string> si = new List<string>();
+                if (!Bun) si.Add("Hold the bun.");
+                if (!Ketchup) si.Add("Hold the ketchup.");
+                if (!Mustard) si.Add("Hold the mustard.");
+                if (!Pickle) si.Add("Hold the pickle.");
+                if (!Cheese) si.Add("Hold the cheese.");
+
+                return si;
+            }
         }
 
         /// <summary>
@@ -44,14 +54,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 bun = value;
-                if (bun == false)
-                {
-                    SpecialInstructions.Add("Hold the bun.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the bun.");
-                }
             }
         }
 
@@ -69,14 +71,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 ketchup = value;
-                if (ketchup == false)
-                {
-                    SpecialInstructions.Add("Hold the ketchup.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the ketchup.");
-                }
             }
         }
 
@@ -94,14 +88,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 mustard = value;
-                if (mustard == false)
-                {
-                    SpecialInstructions.Add("Hold the mustard.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the mustard.");
-                }
             }
         }
 
@@ -119,14 +105,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 pickle = value;
-                if (pickle == false)
-                {
-                    SpecialInstructions.Add("Hold the pickle.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the pickle.");
-                }
             }
         }
 
@@ -144,14 +122,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 cheese = value;
-                if (cheese == false)
-                {
-                    SpecialInstructions.Add("Hold the cheese.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the cheese.");
-                }
             }
         }
 

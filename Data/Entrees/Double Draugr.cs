@@ -26,7 +26,20 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public List<string> SpecialInstructions
         {
-            get;
+            get
+            {
+                List<string> si = new List<string>();
+                if (!Bun) si.Add("Hold the bun.");
+                if (!Ketchup) si.Add("Hold the ketchup.");
+                if (!Mustard) si.Add("Hold the mustard.");
+                if (!Pickle) si.Add("Hold the pickle.");
+                if (!Cheese) si.Add("Hold the cheese.");
+                if (!Tomato) si.Add("Hold the tomatoes.");
+                if (!Lettuce) si.Add("Hold the lettuce.");
+                if (!Mayo) si.Add("Hold the mayo.");
+
+                return si;
+            }
         }
 
         /// <summary>
@@ -43,14 +56,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 bun = value;
-                if (bun == false)
-                {
-                    SpecialInstructions.Add("Hold the bun.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the bun.");
-                }
             }
         }
 
@@ -68,14 +73,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 ketchup = value;
-                if (ketchup == false)
-                {
-                    SpecialInstructions.Add("Hold the ketchup.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the ketchup.");
-                }
             }
         }
 
@@ -93,14 +90,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 mustard = value;
-                if (mustard == false)
-                {
-                    SpecialInstructions.Add("Hold the mustard.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the mustard.");
-                }
             }
         }
 
@@ -118,14 +107,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 pickle = value;
-                if (pickle == false)
-                {
-                    SpecialInstructions.Add("Hold the pickle.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the pickle.");
-                }
             }
         }
 
@@ -143,14 +124,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 cheese = value;
-                if (cheese == false)
-                {
-                    SpecialInstructions.Add("Hold the cheese.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the cheese.");
-                }
             }
         }
 
@@ -168,14 +141,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 tomato = value;
-                if (tomato == false)
-                {
-                    SpecialInstructions.Add("Hold the tomato.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the tomato.");
-                }
             }
         }
 
@@ -193,14 +158,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 lettuce = value;
-                if (lettuce == false)
-                {
-                    SpecialInstructions.Add("Hold the lettuce.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the lettuce.");
-                }
             }
         }
 
@@ -218,14 +175,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 mayo = value;
-                if (mayo == false)
-                {
-                    SpecialInstructions.Add("Hold the mayo.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the mayo.");
-                }
             }
         }
 

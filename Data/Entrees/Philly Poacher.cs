@@ -35,14 +35,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 sirloin = value;
-                if (sirloin == false)
-                {
-                    SpecialInstructions.Add("Hold the sirloin.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the sirloin.");
-                }
             }
         }
 
@@ -60,14 +52,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 onion = value;
-                if (onion == false)
-                {
-                    SpecialInstructions.Add("Hold the onions.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the onions.");
-                }
             }
         }
 
@@ -85,15 +69,6 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 roll = value;
-                if (roll == false)
-                {
-                    SpecialInstructions.Add("Hold the rolls.");
-                    
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold the rolls.");
-                }
             }
         }
 
@@ -102,7 +77,15 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public List<string> SpecialInstructions
         {
-            get;
+            get
+            {
+                List<string> si = new List<string>();
+                if (!Sirloin) si.Add("Hold the sirloin.");
+                if (!Onion) si.Add("Hold the onions.");
+                if (!Roll) si.Add("Hold the rolls.");
+
+                return si;
+            }
         }
 
         /// <summary>

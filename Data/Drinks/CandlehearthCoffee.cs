@@ -15,12 +15,17 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// The price of the drink
         /// </summary>
-        public double Price;
+        public double price;
 
         /// <summary>
         /// The calories of the drink.
         /// </summary>
-        public uint Calories;
+        public uint calories;
+
+        /// <summary>
+        /// Size of the drink
+        /// </summary>
+        private Size size;
 
         /// <summary>
         /// Whether to add ice or not.
@@ -36,21 +41,17 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 ice = value;
-                if (ice == true)
-                {
-                    SpecialInstructions.Add("Add ice.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Add ice.");
-                }
             }
         }
 
         /// <summary>
-        /// Size of the drink
+        /// Sets / gets the private size of the drink
         /// </summary>
-        public Size size = Size.Small;
+        public Size Size
+        {
+            get { return size; }
+            set { size = value; }
+        }
 
         /// <summary>
         /// To add cream to coffee
@@ -66,14 +67,6 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 roomForCream = value;
-                if (roomForCream == true)
-                {
-                    SpecialInstructions.Add("Add cream to coffee.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Add cream to coffee.");
-                }
             }
         }
 
@@ -91,14 +84,6 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 decaf = value;
-                if (decaf == true)
-                {
-                    SpecialInstructions.Add("Make coffee decaf.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Make coffee decaf.");
-                }
             }
         }
 
@@ -107,36 +92,58 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public List<string> SpecialInstructions
         {
-            get;
+            get
+            {
+                List<string> si = new List<string>();
+                if (Ice) si.Add("Add ice.");
+                if (RoomForCream) si.Add("Add cream to coffee.");
+
+
+                //if (si.Count == 0) si.Add("No special instructions.");
+
+                return si;
+            }
         }
 
         /// <summary>
-        /// Sets up the size with the price and calories for the drink
+        /// Sets up the size with the calories for the drink
         /// </summary>
-        public Size s
+        public uint Calories
         {
             get
             {
-                return size;
+                switch (Size)
+                {
+                    case Size.Small: return 7;
+                    case Size.Medium: return 10;
+                    case Size.Large: return 20;
+                    default: throw new NotImplementedException("Should never be reached");
+                }
             }
             set
             {
-                size = value;
-                switch (value)
+                calories = value;
+            }
+        }
+
+        /// <summary>
+        /// Sets up the size with the price for the drink
+        /// </summary>
+        public double Price
+        {
+            get
+            {
+                switch (Size)
                 {
-                    case Size.Small:
-                        Price = 0.75;
-                        Calories = 7;
-                        break;
-                    case Size.Medium:
-                        Price = 1.25;
-                        Calories = 10;
-                        break;
-                    case Size.Large:
-                        Price = 1.75;
-                        Calories = 20;
-                        break;
+                    case Size.Small: return 0.75;
+                    case Size.Medium: return 1.25;
+                    case Size.Large: return 1.75;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
+            }
+            set
+            {
+                price = value;
             }
         }
 
@@ -147,8 +154,17 @@ namespace BleakwindBuffet.Data.Drinks
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append(size + " Aretino Apple Juice");
-            return sb.ToString();
+            if (Decaf)
+            {
+                sb.Append(size + " Decaf Candlehearth Coffee");
+                return sb.ToString();
+            }
+            else
+            {
+                sb.Append(size + " Candlehearth Coffee");
+                return sb.ToString();
+            }
+            
         }
     }
 }

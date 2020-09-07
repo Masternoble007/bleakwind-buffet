@@ -28,7 +28,12 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public List<string> SpecialInstructions
         {
-            get;
+            get
+            {
+                List<string> si = new List<string>();
+
+                return si;
+            }
         }
 
         /// <summary>

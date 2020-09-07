@@ -15,19 +15,25 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// The price of the drink
         /// </summary>
-        public double Price;
+        public double price = 0.00;
 
         /// <summary>
         /// The amount of calories in the drink
         /// </summary>
-        public uint Calories;
+        public uint calories = 0;
 
         /// <summary>
         /// Size of the drink
         /// </summary>
-        public Size size
+        public Size size;
+
+        /// <summary>
+        /// Sets / gets the private size of the drink
+        /// </summary>
+        public Size Size
         {
-            get;
+            get { return size; }
+            set { size = value; }
         }
 
         /// <summary>
@@ -35,7 +41,14 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public List<string> SpecialInstructions
         {
-            get;
+            get
+            {
+                List<string> si = new List<string>();
+                if (!Ice) si.Add("Hold ice.");
+                if (Lemon) si.Add("Add lemon.");
+
+                return si;
+            }
         }
 
         /// <summary>
@@ -52,14 +65,6 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 ice = value;
-                if (ice == false)
-                {
-                    SpecialInstructions.Add("hold ice.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("hold ice.");
-                }
             }
         }
 
@@ -77,14 +82,6 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 lemon = value;
-                if (lemon == true)
-                {
-                    SpecialInstructions.Add("Add lemon.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Add lemon.");
-                }
             }
         }
 

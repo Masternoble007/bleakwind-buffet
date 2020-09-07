@@ -4,7 +4,6 @@
  * Purpose: Class used to represent the Sailor's Soda drink.
  */
 using BleakwindBuffet.Data.Enums;
-using Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,17 +15,17 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// The price of the drink
         /// </summary>
-        public double Price;
+        public double price;
 
         /// <summary>
         /// The amount of calories in the drink
         /// </summary>
-        public uint Calories;
+        public uint calories;
 
         /// <summary>
         /// Size of the drink
         /// </summary>
-        public Size si = Size.Small;
+        public Size size;
 
         /// <summary>
         /// If ice goes with the drink
@@ -42,64 +41,83 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 ice = value;
-                if (ice == false)
-                {
-                    SpecialInstructions.Add("Hold ice.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Hold ice.");
-                }
             }
+        }
+
+        /// <summary>
+        /// Sets / gets the private size of the drink
+        /// </summary>
+        public Size Size
+        {
+            get { return size; }
+            set { size = value; }
         }
 
         /// <summary>
         /// Soda Flavor
         /// </summary>
-        public SodaFlavor sf = SodaFlavor.Cherry;
+        public SodaFlavor sf;
 
         /// <summary>
         /// Adds instructions for the drink
         /// </summary>
         public List<string> SpecialInstructions
         {
-            get;
+            get
+            {
+                List<string> si = new List<string>();
+                if(!Ice) si.Add("Hold ice.");
+
+                return si;
+            }
         }
 
         /// <summary>
-        /// Sets up the size with the price and calories for the drink
+        /// Sets up the size with the price for the drink
         /// </summary>
-        public Size s
+        public double Price
         {
             get
             {
-                return si;
-            }            
+                switch (Size)
+                {
+                    case Size.Small: return 1.42;
+                    case Size.Medium: return 1.74;
+                    case Size.Large: return 2.07;
+                    default: throw new NotImplementedException("Should never be reached");
+                }
+            }
             set
             {
-                si = value;
-                switch (value)
+                price = value;
+            }
+        }
+
+        /// <summary>
+        /// Sets up the size with the calories for the drink
+        /// </summary>
+        public uint Calories
+        {
+            get
+            {
+                switch (Size)
                 {
-                    case Size.Small:
-                        Price = 1.42;
-                        Calories = 117;
-                        break;
-                    case Size.Medium:
-                        Price = 1.74;
-                        Calories = 153;
-                        break;
-                    case Size.Large:
-                        Price = 2.07;
-                        Calories = 205;
-                        break;
+                    case Size.Small: return 117;
+                    case Size.Medium: return 153;
+                    case Size.Large: return 205;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
+            }
+            set
+            {
+                calories = value;
             }
         }
 
         /// <summary>
         /// Sets what flavor the person wants
         /// </summary>
-        public SodaFlavor f
+        public SodaFlavor Flavor
         {
             get{
                 return sf;
@@ -138,7 +156,7 @@ namespace BleakwindBuffet.Data.Drinks
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append(si + " " + sf + " Sailor Soda");
+            sb.Append(size + " " + sf + " Sailor Soda");
             return sb.ToString();
         }
     }

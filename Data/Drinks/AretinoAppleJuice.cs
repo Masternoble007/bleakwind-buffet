@@ -15,17 +15,22 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// The price of the drink
         /// </summary>
-        public double Price;
+        public double price;
 
         /// <summary>
         /// The calories of the drink.
         /// </summary>
-        public uint Calories;
+        public uint calories;
 
         /// <summary>
         /// Whether to add ice or not.
         /// </summary>
         private bool ice = false;
+
+        /// <summary>
+        /// Size of the drink
+        /// </summary>
+        private Size size;
 
         /// <summary>
         /// Gets and sets the ice.
@@ -36,57 +41,74 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 ice = value;
-                if (ice == true)
-                {
-                    SpecialInstructions.Add("Add ice.");
-                }
-                else
-                {
-                    SpecialInstructions.Remove("Add ice.");
-                }
             }
+
         }
 
         /// <summary>
-        /// Size of the drink
+        /// Sets / gets the private size of the drink
         /// </summary>
-        public Size size = Size.Small;
+        public Size Size
+        {
+            get { return size; }
+            set { size = value; }
+        }
 
         /// <summary>
         /// Gets instructions for the drink
         /// </summary>
         public List<string> SpecialInstructions
         {
-            get;
+            get
+            {
+                List<string> si = new List<string>();
+                if (Ice) si.Add("Add ice.");
+
+               /// if (si.Count == 0) si.Add("No special instructions.");
+
+                return si;
+            }
         }
 
         /// <summary>
-        /// Sets up the size with the price and calories for the drink
+        /// Sets up the size with the price for the drink
         /// </summary>
-        public Size s
+        public double Price
         {
             get
             {
-                return size;
+                switch (Size)
+                {
+                    case Size.Small: return 0.62;
+                    case Size.Medium: return 0.87;
+                    case Size.Large: return 1.01;
+                    default: throw new NotImplementedException("Should never be reached");
+                }
             }
             set
             {
-                size = value;
-                switch (value)
+                price = value;
+            }
+        }
+
+        /// <summary>
+        /// Sets up the size with the calories for the drink
+        /// </summary>
+        public uint Calories
+        {
+            get
+            {
+                switch (Size)
                 {
-                    case Size.Small:
-                        Price = 0.62;
-                        Calories = 44;
-                        break;
-                    case Size.Medium:
-                        Price = 0.87;
-                        Calories = 88;
-                        break;
-                    case Size.Large:
-                        Price = 1.01;
-                        Calories = 132;
-                        break;
+                    case Size.Small: return 44;
+                    case Size.Medium: return 88;
+                    case Size.Large: return 132;
+                    default: throw new NotImplementedException("Should never be reached");
                 }
+            }
+            set
+            {
+                calories = value;
             }
         }
 
