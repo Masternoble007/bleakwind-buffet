@@ -9,18 +9,31 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class Garden_Orc_Omelette
+    public class Garden_Orc_Omelette : Entree
     {
+        /// <summary>
+        /// Sets up the size with the price for the entree
+        /// </summary>
+        public override double Price
+        {
+            get
+            {
+                return 4.57;
+            }
+
+        }
 
         /// <summary>
-        /// tells the price of the entree.
+        /// Sets up the price for the entree
         /// </summary>
-        public double Price = 4.57;
+        public override uint Calories
+        {
+            get
+            {
+                return 404;
+            }
 
-        /// <summary>
-        /// The calories of the entree
-        /// </summary>
-        public uint Calories = 404;
+        }
 
         /// <summary>
         /// To put broccoli in the salad or not.
@@ -93,7 +106,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// What it says to not put in the entree
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

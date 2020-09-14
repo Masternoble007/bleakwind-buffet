@@ -10,36 +10,17 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class Mad_Otar_Grits
+    public class Mad_Otar_Grits : Side
     {
-        /// <summary>
-        /// Prices of the side.
-        /// </summary>
-        public double price;
-
-        /// <summary>
-        /// The calories of the side.
-        /// </summary>
-        public uint calories;
-
         /// <summary>
         /// Size of the pancakes
         /// </summary>
-        private Size size;
-
-        /// <summary>
-        /// Sets / gets the private size of the side.
-        /// </summary>
-        public Size Size
-        {
-            get { return size; }
-            set { size = value; }
-        }
+        private Size size = Size.Small;
 
         /// <summary>
         /// Sets up the size with the price for the side.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -51,16 +32,12 @@ namespace BleakwindBuffet.Data.Sides
                     default: throw new NotImplementedException("Should never be reached");
                 }
             }
-            set
-            {
-                price = value;
-            }
         }
 
         /// <summary>
         /// Sets up the size with the calories for the side.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -72,16 +49,12 @@ namespace BleakwindBuffet.Data.Sides
                     default: throw new NotImplementedException("Should never be reached");
                 }
             }
-            set
-            {
-                calories = value;
-            }
         }
 
         /// <summary>
         /// Gets instructions for the side.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
@@ -97,9 +70,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <returns></returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(size + " Mad Otar Grits");
-            return sb.ToString();
+            return Size.ToString() + " Mad Otar Grits";
         }
     }
 }

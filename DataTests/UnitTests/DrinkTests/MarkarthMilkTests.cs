@@ -14,6 +14,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
     public class MarkarthMilkTests
     {
         [Fact]
+        public void ShouldBeADrink()
+        {
+            Markarth_Milk mm = new Markarth_Milk();
+            Assert.IsAssignableFrom<Drink>(mm);
+        }
+
+        [Fact]
         public void ShouldNotIncludeIceByDefault()
         {
             Markarth_Milk mm = new Markarth_Milk();

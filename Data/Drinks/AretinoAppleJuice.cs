@@ -10,7 +10,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class Aretino_Apple_Juice
+    public class Aretino_Apple_Juice : Drink
     {
         /// <summary>
         /// The price of the drink
@@ -46,18 +46,9 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         /// <summary>
-        /// Sets / gets the private size of the drink
-        /// </summary>
-        public Size Size
-        {
-            get { return size; }
-            set { size = value; }
-        }
-
-        /// <summary>
         /// Gets instructions for the drink
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
@@ -73,7 +64,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Sets up the size with the price for the drink
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -85,16 +76,12 @@ namespace BleakwindBuffet.Data.Drinks
                     default: throw new NotImplementedException("Should never be reached");
                 }
             }
-            set
-            {
-                price = value;
-            }
         }
 
         /// <summary>
         /// Sets up the size with the calories for the drink
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -106,10 +93,6 @@ namespace BleakwindBuffet.Data.Drinks
                     default: throw new NotImplementedException("Should never be reached");
                 }
             }
-            set
-            {
-                calories = value;
-            }
         }
 
         /// <summary>
@@ -118,9 +101,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <returns></returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(size + " Aretino Apple Juice");
-            return sb.ToString();
+            return Size.ToString() + " Aretino Apple Juice";
         }
     }
 }

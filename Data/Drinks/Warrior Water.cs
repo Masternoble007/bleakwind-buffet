@@ -10,36 +10,51 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class Warrior_Water
+    public class Warrior_Water : Drink
     {
-        /// <summary>
-        /// The price of the drink
-        /// </summary>
-        public double price = 0.00;
-
-        /// <summary>
-        /// The amount of calories in the drink
-        /// </summary>
-        public uint calories = 0;
-
         /// <summary>
         /// Size of the drink
         /// </summary>
         public Size size;
 
         /// <summary>
-        /// Sets / gets the private size of the drink
+        /// Sets up the size with the price for the drink
         /// </summary>
-        public Size Size
+        public override double Price
         {
-            get { return size; }
-            set { size = value; }
+            get
+            {
+                switch (Size)
+                {
+                    case Size.Small: return 0.00;
+                    case Size.Medium: return 0.00;
+                    case Size.Large: return 0.00;
+                    default: throw new NotImplementedException("Should never be reached");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Sets up the size with the calories for the drink
+        /// </summary>
+        public override uint Calories
+        {
+            get
+            {
+                switch (Size)
+                {
+                    case Size.Small: return 0;
+                    case Size.Medium: return 0;
+                    case Size.Large: return 0;
+                    default: throw new NotImplementedException("Should never be reached");
+                }
+            }
         }
 
         /// <summary>
         /// Adds instructions for the drink
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
@@ -91,9 +106,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <returns></returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(size + " warrier water");
-            return sb.ToString();
+            return Size.ToString() + " warrier water";
         }
     }
 }

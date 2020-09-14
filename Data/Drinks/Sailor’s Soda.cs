@@ -10,7 +10,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class Sailor_s_Soda
+    public class Sailor_s_Soda : Drink
     {
         /// <summary>
         /// The price of the drink
@@ -45,15 +45,6 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         /// <summary>
-        /// Sets / gets the private size of the drink
-        /// </summary>
-        public Size Size
-        {
-            get { return size; }
-            set { size = value; }
-        }
-
-        /// <summary>
         /// Soda Flavor
         /// </summary>
         public SodaFlavor sf;
@@ -61,7 +52,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Adds instructions for the drink
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
@@ -75,7 +66,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Sets up the size with the price for the drink
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -87,16 +78,12 @@ namespace BleakwindBuffet.Data.Drinks
                     default: throw new NotImplementedException("Should never be reached");
                 }
             }
-            set
-            {
-                price = value;
-            }
         }
 
         /// <summary>
         /// Sets up the size with the calories for the drink
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -107,10 +94,6 @@ namespace BleakwindBuffet.Data.Drinks
                     case Size.Large: return 205;
                     default: throw new NotImplementedException("Should never be reached");
                 }
-            }
-            set
-            {
-                calories = value;
             }
         }
 
@@ -155,9 +138,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <returns></returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(size + " " + sf + " Sailor Soda");
-            return sb.ToString();
+            return Size.ToString() + " " + sf + " Sailor Soda";
         }
     }
 }

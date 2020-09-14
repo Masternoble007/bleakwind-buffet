@@ -10,22 +10,34 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class Thugs_T_Bone
+    public class Thugs_T_Bone : Entree
     {
         /// <summary>
-        /// The price of the entree.
+        /// The price of the burger.
         /// </summary>
-        public double Price = 6.44;
+        public override double Price
+        {
+            get
+            {
+                return 6.44;
+            }
+        }
 
         /// <summary>
-        /// The calories inside the entree
+        /// The calories of the burger
         /// </summary>
-        public uint Calories = 982;
+        public override uint Calories
+        {
+            get
+            {
+                return 982;
+            }
+        }
 
         /// <summary>
         /// List to tell what is not added.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

@@ -9,17 +9,31 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class Smokehouse_Skeleton
+    public class Smokehouse_Skeleton : Entree
     {
         /// <summary>
-        /// The price of the entree.
+        /// Sets up the size with the price for the entree
         /// </summary>
-        public double Price = 5.62;
+        public override double Price
+        {
+            get
+            {
+                return 5.62;
+            }
+
+        }
 
         /// <summary>
-        /// The calories of the entree
+        /// Sets up the price for the entree
         /// </summary>
-        public uint Calories = 602;
+        public override uint Calories
+        {
+            get
+            {
+                return 602;
+            }
+
+        }
 
         /// <summary>
         /// Whether to add sausage to the entree.
@@ -93,7 +107,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Holds the strings on what to hold
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

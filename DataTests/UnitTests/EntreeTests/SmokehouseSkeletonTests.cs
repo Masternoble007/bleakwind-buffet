@@ -12,7 +12,14 @@ using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities.ObjectModel;
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class SmokehouseSkeletonTests
-    {        
+    {
+        [Fact]
+        public void ShouldBeAEntree()
+        {
+            Smokehouse_Skeleton ss = new Smokehouse_Skeleton();
+            Assert.IsAssignableFrom<Entree>(ss);
+        }
+
         [Fact]
         public void ShouldInlcudeSausageByDefault()
         {

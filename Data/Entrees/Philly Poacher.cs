@@ -9,17 +9,31 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class Philly_Poacher
+    public class Philly_Poacher : Entree
     {
         /// <summary>
-        /// 
+        /// Sets up the size with the price for the entree
         /// </summary>
-        public double Price = 7.23;
+        public override double Price
+        {
+            get
+            {
+                return 7.23;
+            }
+
+        }
 
         /// <summary>
-        /// 
+        /// Sets up the price for the entree
         /// </summary>
-        public uint Calories = 784;
+        public override uint Calories
+        {
+            get
+            {
+                return 784;
+            }
+
+        }
 
         /// <summary>
         /// Whether the sirloin is in the entree.
@@ -75,7 +89,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// List to tell what is not added.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

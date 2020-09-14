@@ -10,7 +10,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class Markarth_Milk
+    public class Markarth_Milk : Drink
     {
         /// <summary>
         /// The price of the drink
@@ -26,15 +26,6 @@ namespace BleakwindBuffet.Data.Drinks
         /// Whether to add ice or not.
         /// </summary>
         private bool ice = false;
-
-        /// <summary>
-        /// Sets / gets the private size of the drink
-        /// </summary>
-        public Size Size
-        {
-            get { return size; }
-            set { size = value; }
-        }
 
         /// <summary>
         /// Gets and sets the ice.
@@ -53,7 +44,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets instructions for the drink
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
@@ -69,11 +60,11 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Sets up the size with the price for the drink
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
-                switch (size)
+                switch (Size)
                 {
                     case Size.Small: return 1.05;
                     case Size.Medium: return 1.11;
@@ -81,30 +72,22 @@ namespace BleakwindBuffet.Data.Drinks
                     default: throw new NotImplementedException("Should never be reached");
                 }
             }
-            set
-            {
-                price = value;
-            }
         }
 
         /// <summary>
         /// Sets up the size with the calories for the drink
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
-                switch (size)
+                switch (Size)
                 {
                     case Size.Small: return 56;
                     case Size.Medium: return 72;
                     case Size.Large: return 93;
                     default: throw new NotImplementedException("Should never be reached");
                 }
-            }
-            set
-            {
-                calories = value;
             }
         }
 
@@ -114,9 +97,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <returns></returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(size + " Markarth Milk");
-            return sb.ToString();
+            return Size.ToString() + " Markarth Milk";
         }
     }
 }

@@ -13,6 +13,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     public class ThalmorTripleTests
     {
         [Fact]
+        public void ShouldBeAEntree()
+        {
+            Thalmor_Triple tt = new Thalmor_Triple();
+            Assert.IsAssignableFrom<Entree>(tt);
+        }
+
+        [Fact]
         public void ShouldIncludeBunByDefault()
         {
             Thalmor_Triple tt = new Thalmor_Triple();

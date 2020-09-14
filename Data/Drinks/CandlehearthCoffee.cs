@@ -10,7 +10,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class CandlehearthCoffee
+    public class CandlehearthCoffee : Drink
     {
         /// <summary>
         /// The price of the drink
@@ -25,7 +25,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Size of the drink
         /// </summary>
-        private Size size;
+        private Size size = Size.Small;
 
         /// <summary>
         /// Whether to add ice or not.
@@ -42,15 +42,6 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 ice = value;
             }
-        }
-
-        /// <summary>
-        /// Sets / gets the private size of the drink
-        /// </summary>
-        public Size Size
-        {
-            get { return size; }
-            set { size = value; }
         }
 
         /// <summary>
@@ -90,7 +81,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets instructions for the drink
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
@@ -108,7 +99,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Sets up the size with the calories for the drink
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -120,16 +111,12 @@ namespace BleakwindBuffet.Data.Drinks
                     default: throw new NotImplementedException("Should never be reached");
                 }
             }
-            set
-            {
-                calories = value;
-            }
         }
 
         /// <summary>
         /// Sets up the size with the price for the drink
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -140,10 +127,6 @@ namespace BleakwindBuffet.Data.Drinks
                     case Size.Large: return 1.75;
                     default: throw new NotImplementedException("Should never be reached");
                 }
-            }
-            set
-            {
-                price = value;
             }
         }
 
@@ -156,13 +139,11 @@ namespace BleakwindBuffet.Data.Drinks
             StringBuilder sb = new StringBuilder();
             if (Decaf)
             {
-                sb.Append(size + " Decaf Candlehearth Coffee");
-                return sb.ToString();
+                return Size.ToString() + " Decaf Candlehearth Coffee";
             }
             else
             {
-                sb.Append(size + " Candlehearth Coffee");
-                return sb.ToString();
+                return Size.ToString() + " Candlehearth Coffee";
             }
             
         }
