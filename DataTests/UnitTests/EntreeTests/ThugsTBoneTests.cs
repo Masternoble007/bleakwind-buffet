@@ -47,5 +47,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Thugs_T_Bone ttb = new Thugs_T_Bone();
             Assert.Equal("Thugs T-Bone", ttb.ToString());
         }
+
+        [Fact]
+        public void ShouldBeAssignableToAbstractFooClass()
+        {
+            var bar = new Thalmor_Triple();
+            Assert.IsAssignableFrom<Entree>(bar);
+        }
     }
 }

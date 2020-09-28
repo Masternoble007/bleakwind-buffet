@@ -99,5 +99,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             mm.Size = size;
             Assert.Equal(name, mm.ToString());
         }
+
+        [Fact]
+        public void ShouldBeAssignableToAbstractFooClass()
+        {
+            var bar = new Markarth_Milk();
+            Assert.IsAssignableFrom<Drink>(bar);
+        }
     }
 }

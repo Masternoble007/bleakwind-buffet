@@ -1,4 +1,9 @@
-﻿using BleakwindBuffet.Data.Drinks;
+﻿/*
+ * Author: Steven Avila
+ * Class: Menu.cs
+ * Purpose: To bring all entree, side, and drink items into a single menu.
+ */
+using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
 using System;

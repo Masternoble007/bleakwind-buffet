@@ -1,4 +1,9 @@
-﻿using BleakwindBuffet.Data.Enums;
+﻿/*
+ * Author: Steven Avila
+ * Class: Drink.cs
+ * Purpose: to set an override class for all the drinks
+ */
+using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,6 +19,12 @@ namespace BleakwindBuffet.Data.Drinks
         /// The size of the drink.
         /// </summary>
         public virtual Size Size { get; set; }
+
+        /// <summary>
+        /// Gets the flavor of the drink (Sailor Soda.)
+        /// </summary>
+        public virtual SodaFlavor Flavor { get; set; }
+
 
         /// <summary>
         /// The price of the drink

@@ -144,5 +144,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             cc.Decaf = decaf;
             Assert.Equal(name, cc.ToString());
         }
+
+        [Fact]
+        public void ShouldBeAssignableToAbstractFooClass()
+        {
+            var bar = new CandlehearthCoffee();
+            Assert.IsAssignableFrom<Drink>(bar);
+        }
     }
 }

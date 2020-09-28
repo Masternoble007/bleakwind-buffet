@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Steven Avila
+ * Class: Entree.cs
+ * Purpose: to set an override class for all the entrees.
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

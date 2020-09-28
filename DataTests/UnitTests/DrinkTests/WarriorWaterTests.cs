@@ -112,7 +112,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             else Assert.Empty(ww.SpecialInstructions);
         }
 
-
+        [Fact]
+        public void ShouldBeAssignableToAbstractFooClass()
+        {
+            var bar = new Warrior_Water();
+            Assert.IsAssignableFrom<Drink>(bar);
+        }
 
 
     }

@@ -100,7 +100,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Sets what flavor the person wants
         /// </summary>
-        public SodaFlavor Flavor
+        public override SodaFlavor Flavor
         {
             get{
                 return sf;

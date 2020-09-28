@@ -102,5 +102,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.Equal(name, aj.ToString());
 
         }
+
+        [Fact]
+        public void ShouldBeAssignableToAbstractFooClass()
+        {
+            var bar = new Aretino_Apple_Juice();
+            Assert.IsAssignableFrom<Drink>(bar);
+        }
     }
 }

@@ -78,5 +78,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             mog.Size = size;
             Assert.Equal(name, mog.ToString());
         }
+
+        [Fact]
+        public void ShouldBeAssignableToAbstractFooClass()
+        {
+            var bar = new Mad_Otar_Grits();
+            Assert.IsAssignableFrom<Side>(bar);
+        }
     }
 }

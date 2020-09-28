@@ -147,5 +147,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             ss.Flavor = flavor;
             Assert.Equal(name, ss.ToString());
         }
+
+        [Fact]
+        public void ShouldBeAssignableToAbstractFooClass()
+        {
+            var bar = new Sailor_s_Soda();
+            Assert.IsAssignableFrom<Drink>(bar);
+        }
     }
 }

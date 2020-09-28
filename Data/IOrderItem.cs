@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Steven Avila
+ * Class: IOrderItem.cs
+ * Purpose: To get the price, calories, and instructions of the item the user wants to order.
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

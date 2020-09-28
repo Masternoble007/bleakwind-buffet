@@ -78,5 +78,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             dwf.Size = size;
             Assert.Equal(name, dwf.ToString());
         }
+
+        [Fact]
+        public void ShouldBeAssignableToAbstractFooClass()
+        {
+            var bar = new Dragonborn_Waffle_Fries();
+            Assert.IsAssignableFrom<Side>(bar);
+        }
     }
 }
