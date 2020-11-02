@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// The base class representing the common properties of drinks.
     /// </summary>
-    public abstract class Drink : IOrderItem
+    public abstract class Drink : MenuItem
     {
         /// <summary>
         /// The size of the drink.
@@ -25,23 +25,17 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public virtual SodaFlavor Flavor { get; set; }
 
+        public virtual bool Ice { get; protected set; } = true;
 
-        /// <summary>
-        /// The price of the drink
-        /// </summary>
-        /// <value>
-        /// In US dollars
-        /// </value>
-        public abstract double Price { get;}
+        public virtual void HoldIce()
+        {
+            if (Ice)
+            {
+                Ice = false;
+                SI.Add("Hold Ice");
+                NotifyOfPropertyChanged("SpecialInstructions");
+            }
+        }
 
-        /// <summary>
-        /// The calories of the drink.
-        /// </summary>
-        public abstract uint Calories { get;}
-
-        /// <summary>
-        /// Special instructions to prepare the drink
-        /// </summary>
-        public abstract List<string> SpecialInstructions { get; }
     }
 }

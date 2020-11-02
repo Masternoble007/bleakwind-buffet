@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +22,17 @@ namespace PointOfSale
     /// </summary>
     public partial class FlavorandSizeComponent : UserControl
     {
+        /// <summary>
+        /// The constructor of the page for the drinks and the soda's flabor.
+        /// </summary>
         public FlavorandSizeComponent()
         {
             InitializeComponent();
         }
+
+
+
+
+
     }
 }

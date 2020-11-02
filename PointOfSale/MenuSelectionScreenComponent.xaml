@@ -33,7 +33,7 @@
         <Button Name="AretinoAppleJuiceButton" Grid.Column="2" Grid.Row="4" Click="buttonClick">Aretino Apple Juice</Button>
         <Button Name="SmokeHouseSkeletonButton" Grid.Column="0" Grid.Row="4" Click="buttonClick">SmokeHouse Skeleton</Button>
         <Button Name="DragonbornWaffleFriesButton" Grid.Column="1" Grid.Row="4" Click="buttonClick">Dragonborn Waffle Fries</Button>
-        <Button Name="CandlehearthCoffeeButton" Grid.Column="2" Grid.Row="5" Click="buttonClick">Candlehearth Coffee</Button>
+        <Button Name="CandlehearthCoffeeButton" Grid.Column="2" Grid.Row="3" Click="buttonClick">Candlehearth Coffee</Button>
         <Button Name="GardenOrcSaladButton" Grid.Column="0" Grid.Row="5" Click="buttonClick">Garden Orc Salad</Button>
         <Button Name="WarriorWaterButton" Grid.Column="2" Grid.Row="5" Click="buttonClick">Warrior Water</Button>
         <Button Name="ThugsTBoneButton" Grid.Column="0" Grid.Row="6" Click="buttonClick">Thugs T-Bone</Button>

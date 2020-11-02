@@ -7,6 +7,36 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Name="BunButton" Grid.Column="0" Grid.Row="0" Click="buttonClick" FontSize="20" >Bun</Button>
+        <Button Name="KetchupButton" Grid.Column="1" Grid.Row="0" Click="buttonClick" FontSize="20">Ketchup</Button>
+        <Button Name="MustardButton" Grid.Column="2" Grid.Row="0" Click="buttonClick" FontSize="20">Mustard</Button>
+        <Button Name="TomatoButton" Grid.Column="3" Grid.Row="0" Click="buttonClick" FontSize="20">Tomato</Button>
+        <Button Name="PicklesButton" Grid.Column="4" Grid.Row="0" Click="buttonClick" FontSize="20">Pickles</Button>
+        <Button Name="CheeseButton" Grid.Column="5" Grid.Row="0" Click="buttonClick" FontSize="20">Cheese</Button>
+        <Button Name="LettuceButton" Grid.Column="0" Grid.Row="1" Click="buttonClick" FontSize="20">Lettuce</Button>
+        <Button Name="BaconButton" Grid.Column="1" Grid.Row="1" Click="buttonClick" FontSize="20">Bacon</Button>
+        <Button Name="EggsButton" Grid.Column="2" Grid.Row="1" Click="buttonClick" FontSize="20">Eggs</Button>
+        <Button Name="SausageButton" Grid.Column="3" Grid.Row="1" Click="buttonClick" FontSize="20">Sausage</Button>
+        <Button Name="HashbrownsButton" Grid.Column="4" Grid.Row="1" Click="buttonClick" FontSize="20">Hashbrowns</Button>
+        <Button Name="PancakeButton" Grid.Column="5" Grid.Row="1" Click="buttonClick" FontSize="20">Pancake</Button>
+        <Button Name="BroccoliButton" Grid.Column="0" Grid.Row="2" Click="buttonClick" FontSize="20">Broccoli</Button>
+        <Button Name="MushroomsButton" Grid.Column="1" Grid.Row="2" Click="buttonClick" FontSize="20">Mushrooms</Button>
+        <Button Name="SirloinButton" Grid.Column="2" Grid.Row="2" Click="buttonClick" FontSize="20">Sirloin</Button>
+        <Button Name="OnionButton" Grid.Column="3" Grid.Row="2" Click="buttonClick" FontSize="20">Onion</Button>
+        <Button Name="RollButton" Grid.Column="4" Grid.Row="2" Click="buttonClick" FontSize="20">Roll</Button>
     </Grid>
 </UserControl>

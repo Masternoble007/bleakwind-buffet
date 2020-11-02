@@ -7,6 +7,36 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Name="SmallButton" Grid.Column="0" Grid.Row="0" FontSize="30" Click="buttonClick">Small</Button>
+        <Button Name="MediumButton" Grid.Column="1" Grid.Row="0" FontSize="30" Click="buttonClick">Medium</Button>
+        <Button Name="LargeButton" Grid.Column="2" Grid.Row="0" FontSize="30" Click="buttonClick">Large</Button>
+        <Button Name="CherryButton" Grid.Column="0" Grid.Row="2" FontSize="30" Click="buttonClick">Cherry</Button>
+        <Button Name="BlackberryButton" Grid.Column="1" Grid.Row="2" FontSize="30" Click="buttonClick">Blackberry</Button>
+        <Button Name="GrapefruitButton" Grid.Column="2" Grid.Row="2" FontSize="30" Click="buttonClick">Grapefruit</Button>
+        <Button Name="LemonButton" Grid.Column="0" Grid.Row="3" FontSize="30" Click="buttonClick">Lemon</Button>
+        <Button Name="PeachButton" Grid.Column="1" Grid.Row="3" FontSize="30" Click="buttonClick">Peach</Button>
+        <Button Name="WatermelonButton" Grid.Column="2" Grid.Row="3" FontSize="30" Click="buttonClick">Watermelon</Button>
+        <Button Name="SirloinButton" Grid.Column="0" Grid.Row="5" FontSize="30" Click="buttonClick">Ice</Button>
+        <Button Name="WaterLemonButton" Grid.Column="0" Grid.Row="6" FontSize="30" Click="buttonClick">Lemons (Water)</Button>
+        <Button Name="CreamButton" Grid.Column="2" Grid.Row="5" FontSize="30" Click="buttonClick">Cream</Button>
+        <Button Name="DecafButton" Grid.Column="2" Grid.Row="6" FontSize="30" Click="buttonClick">Decaf</Button>
+
+
+
     </Grid>
 </UserControl>

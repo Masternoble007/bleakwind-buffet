@@ -65,14 +65,5 @@ namespace BleakwindBuffet.Data
             };
         }
 
-        public static IEnumerable<IOrderItem> FullMenu()
-        {
-            List<IOrderItem> menuItems = new List<IOrderItem>();
-            menuItems.AddRange(Entrees());
-            menuItems.AddRange(Sides());
-            menuItems.AddRange(Drinks());
-            return menuItems;
-        }
-
     }
 }

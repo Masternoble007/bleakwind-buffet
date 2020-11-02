@@ -14,14 +14,23 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="10*"/>
-            <RowDefinition Height="25"/>
-            <RowDefinition Height="25"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Order" TextAlignment="Right" FontWeight="Bold" FontSize="18"/>
-        <TextBlock Text="# " Grid.Column="1" TextAlignment="Left" FontSize="18" FontWeight="Bold" Margin="5, 0, 0, 0"/>
-        <TextBlock Text="Subtotal: " Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold"/>
-        <TextBlock Text="Tax: " Grid.Row="3" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold"/>
-        <TextBlock Text="Total: " Grid.Row="4" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold"/>
+        <TextBlock Text="Order" TextAlignment="Right" FontWeight="Bold" FontSize="15"/>
+        <TextBlock Text="#" Grid.Column="1" TextAlignment="Left" FontWeight="Bold" FontSize="15" Margin="10, 0, 0 ,0"/>
+        <ListBox Name="FoodOrderListBox" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="1">
+            
+        </ListBox>
+        <ListBox Name="PriceListBox" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1">
+            
+        </ListBox>
+        <TextBlock Text="Subtotal: " Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" FontWeight="Bold" FontSize="15"/>
+        <TextBlock Text="$TBC" Grid.Column="1" Grid.Row="2" FontWeight="Bold" FontSize="15"/>
+        <TextBlock Text="Tax: " Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" FontWeight="Bold" FontSize="15"/>
+        <TextBlock Text="$TBC" Grid.Column="1" Grid.Row="3" FontWeight="Bold" FontSize="15"/>
+        <TextBlock Text="Total: " Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" FontSize="22" HorizontalAlignment="Right" FontWeight="Bold"/>
+        <TextBlock Text="$TBC" Grid.Column="1" Grid.Row="4" FontWeight="Bold" VerticalAlignment="Center" FontSize="22"/>
     </Grid>
 </UserControl>
