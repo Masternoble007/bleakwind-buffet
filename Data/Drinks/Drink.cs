@@ -32,7 +32,7 @@ namespace BleakwindBuffet.Data.Drinks
             if (Ice)
             {
                 Ice = false;
-                SI.Add("Hold Ice");
+                SpecialInstructions.Add("Hold Ice");
                 NotifyOfPropertyChanged("SpecialInstructions");
             }
         }

@@ -16,7 +16,7 @@ namespace BleakwindBuffet.Data
     /// <summary>
     /// Retrieves all food items to be used here.
     /// </summary>
-    public static class Menu
+    public class Menu
     {
         /// <summary>
         /// Returns a list of all entrees for the menu.

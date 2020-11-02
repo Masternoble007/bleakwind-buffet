@@ -16,15 +16,48 @@
 
 <h2>Entrees</h2>
 
-<div class="menu-list">
-    @foreach (var item in Model.)
+<div class="entree-menu-list">
+    @foreach (var item in Model.Entrees)
     {
-
+    <div class="menu-item">
+        <div class="entree-name">Entree</div>
+        <div>@item.Price</div>
+        <div>@item.Calories</div>
+    </div>
     }
 </div>
 
 <h2>Sides</h2>
 
+<div class="side-menu-list">
+    @foreach (var item in Model.Sides)
+    {
+    <div class="menu-item">
+        <div class="side-name">Entree</div>
+        @foreach (var size in Model.Sizes)
+        {
+            item.Size = size;
+            <div>@item.Price</div>
+            <div>@item.Calories</div>
+        }
+    </div>
+    }
+</div>
 
 <h2>Drinks</h2>
+
+<div class="drink-menu-list">
+    @foreach (var item in Model.Drinks)
+    {
+    <div class="menu-item">
+        <div class="drink-name">Entree</div>
+        @foreach (var size in Model.Sizes)
+        {
+            item.Size = size;
+            <div>@item.Price</div>
+            <div>@item.Calories</div>
+        }
+    </div>
+    }
+</div>
 
