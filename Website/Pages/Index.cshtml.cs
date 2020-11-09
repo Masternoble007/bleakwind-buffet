@@ -15,14 +15,8 @@ namespace Website.Pages
     public class IndexModel : PageModel
     {
 
-        public void OnGet()
-        {
-        }
 
-        /// <summary>
-        /// A menu object for the website
-        /// </summary>
-        public Menu menu { get; private set; } = null;
+        public IEnumerable<IOrderItem> menu { get; set; }
 
         /// <summary>
         /// The list of entrees.
@@ -34,12 +28,23 @@ namespace Website.Pages
         /// </summary>
         public IEnumerable<Side> Sides { get; private set; } = null;
 
+        public string searchTerms { get; set; }
+
         /// <summary>
         /// List of drinks.
         /// </summary>
         public IEnumerable<Drink> Drinks { get; private set; } = null;
 
         public List<Size> Sizes { get; } = new List<Size> { Size.Small, Size.Medium, Size.Large };
+
+
+        public void OnGet(string searchTerms, IEnumerable<string> categories, int calMin, int calMax, double priMin, double priMax)
+        {
+            menu = Menu.Search(menu, searchTerms);
+            menu = Menu.FilterByCategory(menu, categories);
+            menu = Menu.FilterByCalories(menu, calMin, calMax);
+            menu = Menu.FilterByPrice(menu, priMin, priMax);
+        }
 
         
     }
