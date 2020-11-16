@@ -72,5 +72,13 @@ namespace BleakwindBuffet.Data.Sides
         {
             return Size.ToString() + " Dragonborn Waffle Fries";
         }
+
+        /// <summary>
+        /// A discription of the side
+        /// </summary>
+        public new string Description()
+        {
+            return "Crispy fried potato waffle fries.";
+        }
     }
 }

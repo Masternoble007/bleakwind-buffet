@@ -22,7 +22,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 return 6.32;
             }
-            
+
         }
 
         /// <summary>
@@ -147,6 +147,14 @@ namespace BleakwindBuffet.Data.Entrees
         public override string ToString()
         {
             return "Briarheart Burger";
+        }
+
+        /// <summary>
+        /// A discription of the entree
+        /// </summary>
+        public new string Description()
+        {
+                return "Single patty burger on a brioche bun.Comes with ketchup, mustard, pickle, and cheese.";
         }
     }
 }

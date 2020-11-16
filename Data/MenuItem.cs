@@ -38,6 +38,8 @@ namespace BleakwindBuffet.Data
 
         public virtual string[] SI => specialInstructions.ToArray();
 
+        public string Description => ToString();
+
         public virtual void NotifyOfPropertyChanged(string name)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

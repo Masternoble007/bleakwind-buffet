@@ -28,14 +28,16 @@ namespace Website.Pages
         /// </summary>
         public IEnumerable<Side> Sides { get; private set; } = null;
 
-        public string searchTerms { get; set; }
-
         /// <summary>
         /// List of drinks.
         /// </summary>
         public IEnumerable<Drink> Drinks { get; private set; } = null;
 
         public List<Size> Sizes { get; } = new List<Size> { Size.Small, Size.Medium, Size.Large };
+
+        public string searchTerms { get; set; }
+
+        public List<string> Categories { get; set; } = new List<string>();
 
 
         public void OnGet(string searchTerms, IEnumerable<string> categories, int calMin, int calMax, double priMin, double priMax)

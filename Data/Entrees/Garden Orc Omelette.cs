@@ -128,5 +128,13 @@ namespace BleakwindBuffet.Data.Entrees
         {
             return "Garden Orc Omelette";
         }
+
+        /// <summary>
+        /// A discription of the entree
+        /// </summary>
+        public new string Description()
+        {
+                return "Vegetarian. Two egg omelette packed with a mix of broccoli, mushrooms, and tomatoes. Topped with cheddar cheese.";
+        }
     }
 }

@@ -74,5 +74,13 @@ namespace BleakwindBuffet.Data.Sides
             return Size.ToString() + " Vokun Salad";
         }
 
+        /// <summary>
+        /// A discription of the side
+        /// </summary>
+        public new string Description()
+        {
+            return "A seasonal fruit salad of mellons, berries, mango, grape, apple, and oranges.";
+        }
+
     }
 }

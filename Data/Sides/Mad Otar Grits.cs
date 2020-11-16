@@ -72,5 +72,13 @@ namespace BleakwindBuffet.Data.Sides
         {
             return Size.ToString() + " Mad Otar Grits";
         }
+
+        /// <summary>
+        /// A discription of the side
+        /// </summary>
+        public new string Description()
+        {
+            return "Cheesey Grits.";
+        }
     }
 }

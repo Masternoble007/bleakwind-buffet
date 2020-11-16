@@ -32,6 +32,10 @@ namespace BleakwindBuffet.Data.Drinks
                     default: throw new NotImplementedException("Should never be reached");
                 }
             }
+            set
+            {
+
+            }
         }
 
         /// <summary>
@@ -107,6 +111,14 @@ namespace BleakwindBuffet.Data.Drinks
         public override string ToString()
         {
             return Size.ToString() + " warrier water";
+        }
+
+        /// <summary>
+        /// A discription of the drink
+        /// </summary>
+        public new string Description()
+        {
+            return " It’s water. Just water..";
         }
     }
 }

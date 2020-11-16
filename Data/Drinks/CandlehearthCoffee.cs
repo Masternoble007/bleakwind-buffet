@@ -147,5 +147,13 @@ namespace BleakwindBuffet.Data.Drinks
             }
             
         }
+
+        /// <summary>
+        /// A discription of the drink
+        /// </summary>
+        public new string Description()
+        {
+            return "Fair trade, fresh ground dark roast coffee.";
+        }
     }
 }

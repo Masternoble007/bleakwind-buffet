@@ -1,2 +1,103 @@
 ﻿body {
+    background-color: darkgray;
+    color: black;
+    font-family:'Times New Roman', Times, serif;
+    padding: 0;
+    margin: 0;
 }
+
+.footer{
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    white-space:nowrap;
+    line-height: 60px;
+}
+
+.h1, h2 {
+    text-align: center;
+    margin: auto;
+}
+
+.h3 {
+    margin: auto;
+}
+
+.regular-menu-part{
+    border-bottom: none;
+}
+
+.set-group {
+    display: flex;
+    flex-direction: row;
+}
+
+.entree-menu-list{
+    display: flex;
+    justify-content: center;
+    flex-direction row;
+    flex-wrap: wrap;
+    border-bottom: 0.2em solid green;
+}
+
+.side-menu-list {
+    display: flex;
+    justify-content: center;
+    flex-direction row;
+    flex-wrap: wrap;
+    border-bottom: 0.2em dotted blue;
+}
+
+.drink-menu-list {
+    display: flex;
+    justify-content: center;
+    flex-direction row;
+    flex-wrap: wrap;
+    border-bottom: 0.2em dotted red;
+}
+
+.menu-item{
+    display: flex;
+    text-align: center;
+}
+
+@media (max-width: 490px) {
+    aside {
+        border: 2px dotted black;
+    }
+
+    .flex-columns > div {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 490px) {
+    .flex-columns {
+        flex-direction: column;
+    }
+}
+
+@media print{
+    .advertisement {
+        display: none;
+    }
+}
+
+@media (orientation: landscape) {
+    h1 {
+        color: darkblue;
+    }
+}
+
+@media (orientation: portrait) {
+    h1 {
+        color: cadetblue;
+    }
+}
+
+.menu-description {
+    margin: auto;
+    text-align: center;
+}
+
